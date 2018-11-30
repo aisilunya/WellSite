@@ -1,0 +1,163 @@
+.flipcard {
+    position: relative;
+    height: auto;
+    min-height: 0px;
+    /* Flip card styles: WebKit, FF, Opera */
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    -o-perspective: 800px;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    -webkit-transition: min-height 1s ease-out 0s, -webkit-transform 1s ease-out 0.5s;
+    -moz-transition: min-height 1s ease-out 0s, -moz-transform 1s ease-out 0.5s;
+    -o-transition: min-height 1s ease-out 0s, -o-transform 1s ease-out 0.5s;
+    /* only height adjustment for IE here */
+    -ms-transition: min-height 1s ease-out 0s;
+    display: inline-block;
+}
+/* The class that flips the card: WebKit, FF, Opera */
+ .flipcard.card-flipped {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    display: inline-block;
+}
+.flipcard .flipcard-front, .flipcard .flipcard-back {
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* backface: all browsers */
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /* Flip card styles: IE 10,11 */
+    -ms-perspective: 800px;
+    -ms-transform-style: flat;
+    -ms-transition: -ms-transform 1s ease-out 0.5s;
+}
+.flipcard .flipcard-front {
+    position: relative;
+    display: inline-block;
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+}
+.flipcard .flipcard-back {
+    position: absolute;
+    display: none;
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    /*  webkit bug: https://bugs.webkit.org/show_bug.cgi?id=54371,
+          You need this fix if you have any input tags on your back face */
+    -webkit-transform: rotateY(180deg) translateZ(1px);
+    background-color: white;
+}
+/* The 2 classes that flip the faces instead of the card: IE 10,11 */
+ .flipcard .flipcard-front.ms-front-flipped {
+    -ms-transform: rotateY(180deg);
+    display: inline-block;
+}
+.flipcard .flipcard-back.ms-back-flipped {
+    -ms-transform: rotateY(0deg);
+}
+.wellcomeJal {
+    width: 100%;
+    height: 100vh;
+}
+.flipcard-front, .flipcard-back {
+    height: 100vh;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+.flipcard {
+    display: inline-block;
+    height: 100vh;
+    border-right: 1px solid rgba(112,112,112, 0.25);
+    box-sizing: border-box;
+}
+.lineGrey {
+    background-color: #ffc93b;
+    display: none;
+    /*border-right: 1px solid rgba(112,112,112, 0.25);*/
+}
+/*.view {
+    display: inline-block !important;
+}*/
+.welcomeMain, .welcomeMainVisible {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(6, 1fr);
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+        -ms-grid-column-span: 5;
+        grid-column-end: 6;
+    grid-gap: 0px;
+    grid-auto-rows: minmax(100%, 100vh);
+    height: 100vh;
+}
+.one {
+  grid-column: 1;
+  grid-row: 1;
+}
+.two { 
+  grid-column: 2;
+  grid-row: 1;
+}
+.three {
+  grid-column: 3;
+  grid-row: 1;
+}
+.four {
+  grid-column: 4;
+  grid-row: 1;
+}
+.five{
+  grid-column: 5;
+  grid-row: 1;
+}
+.six {
+  grid-column: 6;
+  grid-row: 1;
+}
+.logoMain img {
+    width: 90%;
+}
+.linkMenu {
+        display: inline-block;
+        height: 74px;
+        border-top: 5px solid #ffffff;
+        width: 100%;
+    }
+.linkMenu a {
+    height: 19px;
+    color: #000000;
+    font-family: "PT Sans Narrow";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 74px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.linkMenu:hover {
+    border-top: 5px solid #fdca15;
+    height: 74px;
+    cursor: pointer;
+}
+.seeYa {
+    display: none;
+    width: 100%;
+}
+.logoMain {
+    padding-left: 20px;
+    height: 74px;
+    padding-top: 12px;
+}
+.logoMain a img {
+    width: 220px;
+}
