@@ -38,6 +38,8 @@ body {
 }
 .showVM {
   opacity: 1 !important;
+  display: -ms-grid;
+  display: grid;
 }
 .imgNEM {
   height: 800px;
@@ -628,6 +630,7 @@ body {
   height: 900px;
   z-index: 100000;
   opacity: 0;
+  top: 0;
 }
 .verticalMenu .logoVertical {
   padding-left: 40px;
