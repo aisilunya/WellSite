@@ -991,18 +991,18 @@
 				    back.toggleClass('ms-back-flipped');
 				    card.toggleClass('card-flipped');
 				    $('.lineGreyInVisible').css('border-left', '1px solid rgba(112,112,112, 0.25)');			    
-				}, 8000);
+				}, 6000);
 				var mq = window.matchMedia('@media all and (max-width: 769px)');
 				if(mq.matches) {
-				   setTimeout(function () { $('.main').show('fade', 0); $('.caseSlider').slick("refresh"); $('.clientsSlider').slick("refresh"); $('.pricesSlider').slick("refresh"); AOS.init()}, 10000);
+				   setTimeout(function () { $('.main').show('fade', 0); $('.caseSlider').slick("refresh"); $('.clientsSlider').slick("refresh"); $('.pricesSlider').slick("refresh"); AOS.init()}, 8000);
 				} else {
-				    setTimeout(function () { $('.welcomeMainMobyle').css('display', 'none'); $('.main').show(0); $('.caseSlider').slick("refresh"); $('.clientsSlider').slick("refresh"); $('.pricesSlider').slick("refresh"); AOS.init()}, 8000);
+				    setTimeout(function () { $('.welcomeMainMobyle').css('display', 'none'); $('.main').show(0); $('.caseSlider').slick("refresh"); $('.clientsSlider').slick("refresh"); $('.pricesSlider').slick("refresh"); AOS.init()}, 6000);
 				}
 				mq.addListener(function(changed) {
 				    if(changed.matches) {
-						setTimeout(function () { $('.main').show('fade', 0); $('.caseSlider').slick("refresh"); $('.clientsSlider').slick("refresh"); $('.pricesSlider').slick("refresh"); AOS.init()}, 10000);
+						setTimeout(function () { $('.main').show('fade', 0); $('.caseSlider').slick("refresh"); $('.clientsSlider').slick("refresh"); $('.pricesSlider').slick("refresh"); AOS.init()}, 8000);
 				    } else {
-						setTimeout(function () { $('.welcomeMainMobyle').css('display', 'none'); $('.main').show(0); $('.caseSlider').slick("refresh"); $('.clientsSlider').slick("refresh"); $('.pricesSlider').slick("refresh"); AOS.init()}, 8000);
+						setTimeout(function () { $('.welcomeMainMobyle').css('display', 'none'); $('.main').show(0); $('.caseSlider').slick("refresh"); $('.clientsSlider').slick("refresh"); $('.pricesSlider').slick("refresh"); AOS.init()}, 6000);
 				    }
 				});
 				    $('.caseSlider').slick({
