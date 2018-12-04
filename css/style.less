@@ -26,6 +26,9 @@ body {
 .small {
 	display: none !important;
 }
+.mobyleClient {
+	display: none !important;
+}
 html, body {
     margin: 0;
     padding: 0;
@@ -38,6 +41,19 @@ html, body {
 .showVM  {
 	opacity: 1 !important;
 	display: grid;
+}
+.casesWrapperClients {
+	position: relative;
+}
+.mine {
+	display: grid;
+	grid-template-columns: repeat(5, [col-start] 1fr);
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+    -ms-grid-column: 1;
+    grid-column-start: 1;
+    -ms-grid-column-span: 4;
+    grid-column-end: 5;
+    grid-auto-rows: minmax(300px, 300px);
 }
 .imgNEM {
 	height: 800px;
@@ -536,7 +552,7 @@ html, body {
 		margin-left: -2px;
 	}
 }
-.infoBoxes, .howWork, .workSteps, .cases, .sliders, .prices, .pricesTitle, .aboutProcessTitle, .aboutProcess, .reasonsTitle, .reasons, .clientsTitle, .callBack, .footer, .footer_second {
+.infoBoxes, .howWork, .workSteps, .cases, .sliders, .prices, .pricesTitle, .aboutProcessTitle, .mine, .aboutProcess, .reasonsTitle, .reasons, .clientsTitle, .callBack, .footer, .footer_second {
   display: grid;
   grid-template-columns: repeat(6, [col-start] 1fr);
   -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -857,8 +873,7 @@ html, body {
 .clientsWrapper {
 	position: relative;
 }
-.clientsSlider {
-	margin-left: 16.7%;
+.caseSliderClients {
 	.smallImgWrapper {
 	height: 300px;
 	position: relative;
@@ -2255,7 +2270,7 @@ html, body {
 
 //Netbook version
 @media only screen and (max-width: 1024px) and (min-width: 769px) {
-	.clientsSlider .smallImgWrapper img {
+	.caseSliderClients .smallImgWrapper img {
 		width: 80%;
 	}
 	.createLanding {
@@ -2704,6 +2719,23 @@ html, body {
 
 //Tablet version
 @media only screen and (max-width: 768px) and (min-width: 501px) {
+	.hiddenClient {
+		display: none !important;
+	}
+	.mobyleClient {
+		display: grid !important;
+	}
+	.mine {
+		display: -ms-grid;
+	    display: grid;
+	    -ms-grid-columns: 1fr 1fr 1fr;
+	        grid-template-columns: repeat(3, 1fr);
+	    -ms-grid-column: 1;
+	        grid-column-start: 1;
+	        -ms-grid-column-span: 2;
+	        grid-column-end: 3;
+	    grid-gap: 0px;
+	}
 	.welcomeMainMobyle {
 	    display: -ms-grid;
 	    display: grid;
@@ -2734,7 +2766,7 @@ html, body {
 	.mobileFooterLogo {
 		display: block !important;
 	}
-	.clientsSlider .smallImgWrapper {
+	.caseSliderClients .smallImgWrapper {
 		border-left: none;
 	}
 	.seeYa {
@@ -2769,7 +2801,7 @@ html, body {
 	.smallImgWrapper {
 		height: 200px !important;
 	}
-	.clientsSlider {
+	.caseSliderClients {
 		height: 500px;
 	}
   .line {
@@ -3145,7 +3177,7 @@ html, body {
     	}
   	}
   }
-  .casesWrapper {
+  .casesWrapper, .casesWrapperClients {
   	grid-auto-rows: minmax(435px, 435px);
   	margin-bottom: 70px;
   	.sliderText {
@@ -3320,7 +3352,7 @@ html, body {
 	.callBack {
 		display: none;
 	}
-	.clientsSlider {
+	.casesWrapperClients {
 	  	margin-left: 0%;
 	  	width: 100%;
 	  	height: 500px;
@@ -3332,8 +3364,8 @@ html, body {
    	}
    	.arrows_boxClients {
 		left: 50%;
-		margin-left: 0;
-		bottom: 60px;
+		// margin-left: 0;
+		// bottom: 60px;
    	}
    	.footer {
    		grid-auto-rows: minmax(auto, 80px);
@@ -3500,24 +3532,41 @@ html, body {
 		}
   	}
   	.slick-prev {
-		left: -45px;
-		width: 40px;
-	    height: 40px;
-	    margin-top: 20px;
+		left: -45px !important;
+		width: 40px !important;
+	    height: 40px !important;
+	    margin-top: 20px !important;
 	}
 	.slick-next {
-		right: -45px;
-		width: 40px;
-	    height: 40px;
-	    margin-top: 20px;
+		right: -45px !important;
+		width: 40px !important;
+	    height: 40px !important;
+	    margin-top: 20px !important;
 	}
 	.slick-next, .slick-prev {
-	  	margin-top: 0px;
+	  	margin-top: 0px !important;
 	}
 }
 
 // Mobile version
 @media only screen and (max-width: 500px) {
+	.hiddenClient, .hiddenClient1 {
+		display: none !important;
+	}
+	.mobyleClient {
+		display: grid !important;
+	}
+	.mine {
+		display: -ms-grid;
+	    display: grid;
+	    -ms-grid-columns: 1fr 1fr;
+	        grid-template-columns: repeat(2, 1fr);
+	    -ms-grid-column: 1;
+	        grid-column-start: 1;
+	        -ms-grid-column-span: 1;
+	        grid-column-end: 2;
+	    grid-gap: 0px;
+	}
 	.welcomeMainMobyle {
 	    display: -ms-grid;
 	    display: grid;
@@ -3545,7 +3594,7 @@ html, body {
 			}
 		}
 	}
-	.clientsSlider .smallImgWrapper {
+	.caseSliderClients .smallImgWrapper {
 		border-left: none;
 	}
 	.seeYa {
@@ -3584,25 +3633,25 @@ html, body {
 	.clientsWrapper {
 		height: 400px;
 	}
-	.clientsSlider {
+	.caseSliderClients {
 		.smallImgWrapper {
 			height: 130px !important;
 		}
 	}
 	.slick-prev {
-		left: -45px;
-		width: 40px;
-	    height: 40px;
-	    margin-top: 20px;
+		left: -45px !important;
+		width: 40px !important;
+	    height: 40px !important;
+	    margin-top: 20px !important;
 	}
 	.slick-next {
-		right: -45px;
-		width: 40px;
-	    height: 40px;
-	    margin-top: 20px;
+		right: -45px !important;
+		width: 40px !important;
+	    height: 40px !important;
+	    margin-top: 20px !important;
 	}
   .slick-next, .slick-prev {
-  	margin-top: 0px;
+  	margin-top: 0px !important;
   }
   .mobileLogo {
   	display: block;
@@ -4081,7 +4130,7 @@ html, body {
     	}
   	}
   }
-  .casesWrapper {
+  .casesWrapper, .casesWrapperClients {
   	grid-auto-rows: minmax(335px, 335px);
   	-ms-grid-auto-rows: minmax(335px, 335px);
   	margin-bottom: 60px;
@@ -4267,7 +4316,7 @@ html, body {
 	.callBack {
 		display: none;
 	}
-	.clientsSlider {
+	.casesWrapperClients {
 	  	margin-left: 0%;
 	  	width: 100%;
 		img {
@@ -4278,8 +4327,8 @@ html, body {
    	}
    	.arrows_boxClients {
 		left: 50%;
-		margin-left: 0;
-		bottom: 50px;
+		// margin-left: 0;
+		// bottom: 50px;
    	}
    	.footer {
    		grid-auto-rows: minmax(auto, 80px);
